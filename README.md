@@ -9,4 +9,8 @@ This ties in touch events to attributes like:
 
     hm-tap="add_something()"
  
-Add in a script tag, then add `hmTouchevents` to your app's dependencies. Obviously depends on Hammer, but nothing else.
+Add in a script tag, then add `hmTouchevents` to your app's dependencies. 
+
+Obviously depends on [Hammer][1], but nothing else.
+
+[1]: https://github.com/eightmedia/hammer.js
