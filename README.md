@@ -1,16 +1,18 @@
-angular-hammer
-==============
+Angular Hammer v2
+=================
 
-Touch events via Hammerjs
+Forked from [angular-hammer](https://github.com/randallb/angular-hammer), updated to support [Hammer.js v2](https://github.com/EightMedia/hammer.js/tree/v2).
 
-Inspired by AngularJS' implementation of "click dblclick mousedown..." and this gist: https://gist.github.com/3298323
+Within an Angular.js application, allows you to specify custom behaviour on Hammer.js touch events.
 
-This ties in touch events to attributes like:
+Usage, currently as attribute only:
 
-    hm-tap="add_something()"
- 
-Add in a script tag, then add `hmTouchevents` to your app's dependencies. 
+    hm-tap="{expression}"
 
-Obviously depends on [Hammer][1], but nothing else.
+You can change the default settings by adding a second attribute with options:
 
-[1]: https://github.com/eightmedia/hammer.js
+    hm-tap-opts="{drag: false, transform: false}"
+
+Include the angular-hammer.js file, and add `hmTouchevents` to your app’s dependencies.
+
+Requires Hammer.js, tested with `v1.0.0rc1 - 2013-02-15`.
