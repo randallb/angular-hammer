@@ -2,7 +2,7 @@
  * Angular Hammer v2
  *
  * Forked from https://github.com/randallb/angular-hammer
- * Updated to support https://github.com/EightMedia/hammer.js/tree/v2
+ * Updated to support https://github.com/EightMedia/hammer.js
  *
  * Within an Angular.js application, allows you to specify custom behaviour on Hammer.js touch events.
  *
@@ -16,7 +16,7 @@
  *
  * Include this file, and add `hmTouchevents` to your app's dependencies.
  *
- * Requires Hammer.js, tested with `v1.0.0rc1 - 2013-02-15`.
+ * Requires Hammer.js, tested with `v1.0.1 - 2013-02-26`.
  *
  */
 
