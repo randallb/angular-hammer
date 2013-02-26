@@ -1,7 +1,7 @@
 Angular Hammer v2
 =================
 
-Updated to support [Hammer.js v1.0.1+](https://github.com/EightMedia/hammer.js).
+Updated to support the rewritten [Hammer.js](https://github.com/EightMedia/hammer.js) (v1.0.1+).
 
 Within an Angular.js application, allows you to specify custom behaviour on Hammer.js touch events.
 
