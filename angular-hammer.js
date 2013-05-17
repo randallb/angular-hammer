@@ -53,7 +53,7 @@ angular.forEach(hmGestures, function(name){
         var fn, opts;
         fn = $parse(attr[directiveName]);
         opts = $parse(attr["hmOptions"])(scope, {});
-        scope.hammer = scope.hammer || Hammer(element[0], opts);
+        scope.hammer = Hammer(element[0], opts);
         return scope.hammer.on(eventName, function(event) {
           return scope.$apply(function() {
             return fn(scope, {
