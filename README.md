@@ -1,3 +1,11 @@
+** IMPORTANT **
+
+This module will be useless in Angular 1.2 with the advent of new touch events.
+
+Details [here](http://www.youtube.com/watch?v=W13qDdJDHp8)
+
+
+
 Angular Hammer v2
 =================
 
