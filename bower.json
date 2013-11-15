@@ -1,0 +1,14 @@
+{
+  "name": "angular-hammer",
+  "version": "1.0.5",
+  "main": "angular-hammer.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "dependencies": {
+    "angular": ">=1.0.6",
+    "hammerjs": ">=1.0.5"
+  }
+}
