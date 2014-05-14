@@ -10,7 +10,16 @@
  *
  *    hm-tap="{expression}"
  *
- * You can change the default settings for the instance by adding a second attribute with options:
+ * You can change the default settings in your Module#config method
+ *
+ *    myApp.config(function(hmOptionsProvider) {
+ *      hmOptionsProvider.defaults.options = {
+ *        drag: false,
+ *        transform: false
+ *      }
+ *    });
+ *
+ * Or override the default settings for the instance by adding a second attribute with options:
  *
  *    hm-options="{drag: false, transform: false}"
  *
@@ -45,18 +54,27 @@ var hmTouchevents = angular.module('hmTouchevents', []),
                   'hmPinchout:pinchout',
                   'hmTouch:touch',
                   'hmRelease:release'];
-
+hmTouchevents.provider("hmOptions", function() {
+    this.defaults = {
+      options: {}
+    };
+    this.$get = function() {
+      var defaults = this.defaults;
+      return angular.copy(defaults);
+    };
+});
 angular.forEach(hmGestures, function(name){
   var directive = name.split(':'),
   directiveName = directive[0],
   eventName = directive[1];
-  hmTouchevents.directive(directiveName, ["$parse", function($parse) {
+  hmTouchevents.directive(directiveName, ["$parse","hmOptions", function($parse,hmOptions) {
     return {
       scope: true,
       link: function(scope, element, attr) {
         var fn, opts;
         fn = $parse(attr[directiveName]);
-        opts = $parse(attr["hmOptions"])(scope, {});
+        opts = hmOptions.options;
+        angular.extend(opts, $parse(attr['hmOptions'])(scope, {}));
         if(opts && opts.group) {
           scope.hammer = scope.hammer || Hammer(element[0], opts);
         } else {

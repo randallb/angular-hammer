@@ -8,7 +8,16 @@ Usage, currently as attribute only:
 
     hm-tap="{expression}"
 
-You can change the default settings for the instance by adding a second attribute with options:
+You can change the default settings in your Module#config method:
+
+    myApp.config(function(hmOptionsProvider) {
+      hmOptionsProvider.defaults.options = {
+        drag: false,
+        transform: false
+      }
+    });
+
+Or override the default settings for the instance by adding a second attribute with options:
 
     hm-options="{drag: false, transform: false}"
 
